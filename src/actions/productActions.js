@@ -93,6 +93,12 @@ export function deleteProductAction(id) {
             await axiosClient.delete(`/products/${id}`);
             
             dispatch(deleteProductSuccess());
+
+            Swal.fire(
+                'Deleted!',
+                'The product has been deleted.',
+                'success'
+            )
         } catch (error) {
             dispatch(deleteProductError());
         }
