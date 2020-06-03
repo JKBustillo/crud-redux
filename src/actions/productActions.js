@@ -88,10 +88,22 @@ const downloadProductsError = () => ({
 export function deleteProductAction(id) {
     return async dispatch => {
         dispatch(getProductDelete());
+
+        try {
+            await axiosClient.delete(`/products/${id}`);
+            
+            dispatch(deleteProductSuccess());
+        } catch (error) {
+            
+        }
     }
 }
 
 const getProductDelete = id => ({
     type: GET_PRODUCT_DELETE,
     payload: id
+});
+
+const deleteProductSuccess = () => ({
+    type: PRODUCT_DELETED_SUCCESS
 });
