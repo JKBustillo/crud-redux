@@ -45,6 +45,11 @@ export default (state = initialState, action) => {
                 error: null,
                 products: action.payload
             }
+        case GET_PRODUCT_DELETE:
+            return {
+                ...state,
+                productDelete: action.payload
+            }
         default:
             return state;
     }
