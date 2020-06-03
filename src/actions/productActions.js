@@ -4,7 +4,7 @@ import {
     ADD_PRODUCT_ERROR,
     STARTING_PRODUCT_DOWNLOAD,
     PRODUCT_DOWNLOAD_SUCCESS,
-    PRODUCT_DOWNLOAD
+    PRODUCT_DOWNLOAD_ERROR
 } from '../types';
 import axiosClient from '../config/axios';
 import Swal from 'sweetalert2';
