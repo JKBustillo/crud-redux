@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsAction } from '../actions/productActions';
+import Product from './Product';
 
 const Products = () => {
     const dispatch = useDispatch();
@@ -9,6 +10,8 @@ const Products = () => {
         const loadProducts = () => dispatch(getProductsAction());
         loadProducts();
     }, []);
+
+    const products = useSelector(state => state.products.products);
 
     return (
         <Fragment>
@@ -23,7 +26,14 @@ const Products = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    { products.length === 0 ? "There's no products" : 
+                        products.map(product => (
+                            <Product
+                                key={product.id}
+                                product={product}
+                            />
+                        ))
+                    }
                 </tbody>
             </table>
         </Fragment>
