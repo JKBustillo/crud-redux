@@ -6,11 +6,6 @@
       "price": "31111"
     },
     {
-      "id": 2,
-      "name": "Jugo de Naranja",
-      "price": "1"
-    },
-    {
       "name": "Jugo de Naranja",
       "price": "300",
       "id": 3
@@ -24,21 +19,6 @@
       "name": "Jugo de Fresa",
       "price": "200",
       "id": 5
-    },
-    {
-      "name": "Tequilla",
-      "price": 1000,
-      "id": 6
-    },
-    {
-      "name": "Manzanas",
-      "price": 1200,
-      "id": 7
-    },
-    {
-      "name": "Piña",
-      "price": 2000,
-      "id": 8
     }
   ]
 }
