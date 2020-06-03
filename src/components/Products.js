@@ -12,10 +12,13 @@ const Products = () => {
     }, []);
 
     const products = useSelector(state => state.products.products);
+    const error = useSelector(state => state.products.error);
 
     return (
         <Fragment>
             <h2 className="text-center my-5">Product List</h2>
+
+            { error && <p className="font-weight-bold alert alert-danger text-center mt-4">A error occurred</p> }
 
             <table className="table table-striped">
                 <thead className="bg-primary table-dark">
