@@ -29,6 +29,16 @@
       "name": "Tequilla",
       "price": 1000,
       "id": 6
+    },
+    {
+      "name": "Manzanas",
+      "price": 1200,
+      "id": 7
+    },
+    {
+      "name": "Piña",
+      "price": 2000,
+      "id": 8
     }
   ]
 }
