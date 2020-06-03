@@ -84,3 +84,14 @@ const downloadProductsError = () => ({
     type: PRODUCT_DOWNLOAD_ERROR,
     payload: true
 });
+
+export function deleteProductAction(id) {
+    return async dispatch => {
+        dispatch(getProductDelete());
+    }
+}
+
+const getProductDelete = id => ({
+    type: GET_PRODUCT_DELETE,
+    payload: id
+});
