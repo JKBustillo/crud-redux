@@ -1,7 +1,10 @@
 import {
     ADD_PRODUCT,
     ADD_PRODUCT_SUCCESS,
-    ADD_PRODUCT_ERROR
+    ADD_PRODUCT_ERROR,
+    STARTING_PRODUCT_DOWNLOAD,
+    PRODUCT_DOWNLOAD_SUCCESS,
+    PRODUCT_DOWNLOAD
 } from '../types';
 import axiosClient from '../config/axios';
 import Swal from 'sweetalert2';
