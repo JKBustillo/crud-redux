@@ -11,6 +11,7 @@ const initialState = {
     products: [],
     error: null,
     loading: false,
+    productDelete: null,
 };
 
 export default (state = initialState, action) => {
