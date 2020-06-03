@@ -87,7 +87,7 @@ const downloadProductsError = () => ({
 
 export function deleteProductAction(id) {
     return async dispatch => {
-        dispatch(getProductDelete());
+        dispatch(getProductDelete(id));
 
         try {
             await axiosClient.delete(`/products/${id}`);
