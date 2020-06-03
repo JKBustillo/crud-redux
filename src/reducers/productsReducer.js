@@ -50,6 +50,11 @@ export default (state = initialState, action) => {
                 ...state,
                 productDelete: action.payload
             }
+        case PRODUCT_DELETED_SUCCESS:
+            return {
+                ...state,
+                products: state.products.filter(product => product.id !== state.productDelete)
+            }
         default:
             return state;
     }
