@@ -15,6 +15,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
+        case STARTING_PRODUCT_DOWNLOAD:
         case ADD_PRODUCT:
             return {
                 ...state,
