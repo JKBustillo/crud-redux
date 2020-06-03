@@ -94,7 +94,7 @@ export function deleteProductAction(id) {
             
             dispatch(deleteProductSuccess());
         } catch (error) {
-            
+            dispatch(deleteProductError());
         }
     }
 }
@@ -106,4 +106,9 @@ const getProductDelete = id => ({
 
 const deleteProductSuccess = () => ({
     type: PRODUCT_DELETED_SUCCESS
+});
+
+const deleteProductError = () => ({
+    type: PRODUCT_DELETED_ERROR,
+    payload: true
 });
