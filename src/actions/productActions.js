@@ -52,3 +52,14 @@ const addProductError = state => ({
     type: ADD_PRODUCT_ERROR,
     payload: state
 })
+
+export function getProductsAction() {
+    return async dispatch => {
+        dispatch(downloadProducts());
+    }
+}
+
+const downloadProducts = () => ({
+    type: STARTING_PRODUCT_DOWNLOAD,
+    payload: true
+});
