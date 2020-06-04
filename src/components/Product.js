@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteProductAction } from '../actions/productActions';
 import Swal from 'sweetalert2';
@@ -8,6 +8,7 @@ const Product = ({ product }) => {
     const { name, price, id } = product;
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const confirmDeleteProduct = id => {
         Swal.fire({
@@ -25,12 +26,16 @@ const Product = ({ product }) => {
         })
     }
 
+    const redirectEdition = product => {
+        history.push(`/products/${product.id}`);
+    }
+
     return (
         <tr>
             <td>{name}</td>
             <td><span className="font-weight-bold">$ {price}</span></td>
             <td className="acciones">
-                <Link to={`/products/${id}`} className="btn btn-primary mr-2">Edit</Link>
+                <button type="button" onClick={() => redirectEdition(product)} className="btn btn-primary mr-2">Edit</button>
                 <button type="button" className="btn btn-danger" onClick={() => confirmDeleteProduct(id)}>Delete</button>
             </td>
         </tr>
