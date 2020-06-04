@@ -121,3 +121,14 @@ const deleteProductError = () => ({
     type: PRODUCT_DELETED_ERROR,
     payload: true
 });
+
+export function getProductEdit(product) {
+    return dispatch => {
+        dispatch(getProductAction(product));
+    }
+}
+
+const getProductAction = product => ({
+    type: GET_PRODUCT_EDIT,
+    payload: product
+});
