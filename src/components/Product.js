@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { deleteProductAction } from '../actions/productActions';
+import { deleteProductAction, getProductEdit } from '../actions/productActions';
 import Swal from 'sweetalert2';
 
 const Product = ({ product }) => {
@@ -27,6 +27,7 @@ const Product = ({ product }) => {
     }
 
     const redirectEdition = product => {
+        dispatch(getProductEdit(product));
         history.push(`/products/${product.id}`);
     }
 
