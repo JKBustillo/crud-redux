@@ -18,6 +18,7 @@ const initialState = {
     error: null,
     loading: false,
     productDelete: null,
+    productEdit: null,
 };
 
 export default (state = initialState, action) => {
@@ -59,6 +60,11 @@ export default (state = initialState, action) => {
                 ...state,
                 products: state.products.filter(product => product.id !== state.productDelete),
                 productDelete: null
+            }
+        case GET_PRODUCT_EDIT:
+            return {
+                ...state,
+                productEdit: action.payload
             }
         default:
             return state;
