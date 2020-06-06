@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // Redux actions
 import { createNewProductAction } from '../actions/productActions';
-import { showAlertAction } from '../actions/alertActions';
+import { showAlertAction, hideAlertAction } from '../actions/alertActions';
 
 const NewProduct = ({history}) => {
     const [name, setName] = useState('');
@@ -33,6 +33,7 @@ const NewProduct = ({history}) => {
         }
 
         // Check errores
+        dispatch(hideAlertAction());
 
         //Add new product
         addProduct({
