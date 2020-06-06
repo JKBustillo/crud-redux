@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editProductAction } from '../actions/productActions';
 
 const EditProduct = (props) => {
-    const product = useSelector(state => state.products.productEdit);
-    if (!product) {
-        props.history.push('/');
-        return null;
+    const [product, setProduct] = useState({
+        name: '',
+        price: ''
+    });
+
+    const productEdit = useSelector(state => state.products.productEdit);
+    // if (!productEdit) {
+    //     props.history.push('/');
+    //     return null;
+    // }
+
+    useEffect(() => {
+        setProduct(productEdit);
+    }, [productEdit]);
+
+    const handleChange = e => {
+        setProduct({
+            ...product,
+            [e.target.name]: e.target.value
+        });
     }
-    const { name, price, id } = product;
+
+    const { name, price } = product;
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -33,6 +50,7 @@ const EditProduct = (props) => {
                                     placeholder="Product Name"
                                     name="name"
                                     value={name}
+                                    onChange={handleChange}
                                 />
                             </div>
 
@@ -44,6 +62,7 @@ const EditProduct = (props) => {
                                     placeholder="Product Price"
                                     name="price"
                                     value={price}
+                                    onChange={handleChange}
                                 />
                             </div>
 
