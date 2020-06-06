@@ -9,7 +9,7 @@ const Products = () => {
     useEffect(() => {
         const loadProducts = () => dispatch(getProductsAction());
         loadProducts();
-    }, []);
+    }, [dispatch]);
 
     const products = useSelector(state => state.products.products);
     const error = useSelector(state => state.products.error);
