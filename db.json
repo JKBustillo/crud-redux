@@ -17,8 +17,13 @@
     },
     {
       "name": "Jugo de Fresa",
-      "price": "200",
+      "price": "500",
       "id": 5
+    },
+    {
+      "name": "Banana",
+      "price": 300,
+      "id": 6
     }
   ]
 }
