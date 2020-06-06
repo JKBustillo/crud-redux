@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editProductAction } from '../actions/productActions';
+import { useHistory } from 'react-router-dom';
 
-const EditProduct = (props) => {
+const EditProduct = () => {
+    const history = useHistory();
+    const dispatch = useDispatch();
+
     const [product, setProduct] = useState({
         name: '',
         price: ''
@@ -18,19 +22,20 @@ const EditProduct = (props) => {
         setProduct(productEdit);
     }, [productEdit]);
 
+    const { name, price } = product;
+    
     const handleChange = e => {
         setProduct({
             ...product,
             [e.target.name]: e.target.value
         });
     }
-
-    const { name, price } = product;
-
+    
     const handleSubmit = e => {
         e.preventDefault();
 
-        editProductAction();
+        dispatch(editProductAction(product));
+        history.push('/');
     }
 
     return (
